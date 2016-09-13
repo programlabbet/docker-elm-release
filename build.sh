@@ -4,8 +4,8 @@ src=$1
 cd $src
 
 if [ -e "elm-package.json" ]; then
-    # install necessary elm packages for project
-    elm-package install -y
+  # install necessary elm packages for project
+   elm-package install -y
 fi
 
 if [ -e "package.json" ]; then
