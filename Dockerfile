@@ -9,11 +9,13 @@ ENV LC_ALL="en_US.UTF-8"
 RUN yum install -y wget rsync unzip
 
 # Install nodejs/npm (needed to install Elm and Brunch and stuff)
-RUN curl --silent --location https://rpm.nodesource.com/setup_5.x | bash -
+RUN curl --silent --location https://rpm.nodesource.com/setup_4.x | bash -
 RUN yum install -y gcc-c++ make nodejs
 
-# Install Elm 0.17.1
-RUN npm i -g elm@0.17.1
+# Install Yarn
+RUN npm i -g yarn
+# Install Elm 0.18
+RUN npm i -g elm@0.18
 RUN npm i -g brunch@2.8.2
 RUN npm i -g coffee-script
 

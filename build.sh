@@ -9,8 +9,8 @@ if [ -e "elm-package.json" ]; then
 fi
 
 if [ -e "package.json" ]; then
-	# install necessary nodejs packages
-	npm i
+	# install necessary nodejs packages (using yarn)
+	yarn install
 fi
 
 if [ -e "brunch-config.js" ]; then
