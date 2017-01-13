@@ -3,17 +3,20 @@
 src=$1
 cd $src
 
+# clean up previous elm build residues
+rm -rf elm-stuff
+
+# install necessary elm packages for project
 if [ -e "elm-package.json" ]; then
-  # install necessary elm packages for project
-   elm-package install -y
+	elm-package install -y
 fi
 
+# install necessary nodejs packages (using yarn)
 if [ -e "package.json" ]; then
-	# install necessary nodejs packages (using yarn)
 	yarn install
 fi
 
+# build project using brunch
 if [ -e "brunch-config.js" ]; then
-	# build project using brunch
 	brunch b
 fi
