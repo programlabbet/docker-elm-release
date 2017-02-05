@@ -8,7 +8,8 @@ rm -rf elm-stuff
 
 # install necessary elm packages for project
 if [ -e "elm-package.json" ]; then
-	elm-package install -y
+	# elm-package install -y
+	elm-install
 fi
 
 # install necessary nodejs packages (using yarn)

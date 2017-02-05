@@ -18,6 +18,7 @@ RUN npm i -g yarn
 RUN npm i -g elm@0.18
 RUN npm i -g brunch@2.8.2
 RUN npm i -g coffee-script
+RUN npm i -g elm-github-install
 
 # Clean cache
 RUN yum clean all
