@@ -11,19 +11,17 @@ RUN yum install -y wget rsync unzip
 # Install nodejs/npm (needed to install Elm and Brunch and stuff)
 RUN curl --silent --location https://rpm.nodesource.com/setup_7.x | bash -
 RUN yum install -y gcc-c++ make nodejs
+RUN yum install -y gem
 
 # Install Yarn
 RUN npm i -g yarn
+
 # Install Elm 0.18
-# RUN npm i -g elm@0.18
 RUN yarn global add elm@0.18
-#RUN npm i -g brunch@2.8.2
 RUN yarn global add brunch@2.8.2
-#RUN npm i -g coffee-script
 RUN yarn global add coffee-script
 RUN mkdir -p /root/.elm-install
 RUN chmod -R 777 /root/.elm-install
-#RUN npm i -g elm-github-install
 RUN yarn global add elm-github-install
 
 # Clean cache
