@@ -11,7 +11,11 @@ RUN yum install -y wget rsync unzip
 # Install nodejs/npm (needed to install Elm and Brunch and stuff)
 RUN curl --silent --location https://rpm.nodesource.com/setup_7.x | bash -
 RUN yum install -y gcc-c++ make nodejs
-RUN yum install -y gem
+RUN yum install -y which
+
+# Install Ruby and Gem (to support elm-install)
+RUN gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+RUN curl -sSL https://get.rvm.io | bash -s stable --ruby
 
 # Install Yarn
 RUN npm i -g yarn
